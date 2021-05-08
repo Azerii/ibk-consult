@@ -55,7 +55,12 @@ const Header = () => {
           </a>
           <Spacer x={2.4} />
           {/* get linkedin link */}
-          <a href="" className="navLink">
+          <a
+            href="https://ng.linkedin.com/in/ibukunadegbulugbe"
+            target="_blank"
+            rel="noreferrer noopener"
+            className="navLink"
+          >
             <img src={linkedin} alt="mail" />
             <Spacer x={1.2} />
             <span className="textMedium">Ibukun Adegbulugbe</span>
