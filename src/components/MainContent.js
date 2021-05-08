@@ -44,13 +44,40 @@ const Wrapper = styled(Container)`
   .bgPrimary {
     background-color: #0000fe;
   }
+
+  @media screen and (max-width: 768px) {
+    display: block;
+    grid-template-columns: unset;
+
+    .content,
+    contactForm {
+      grid-column: unset;
+    }
+
+    .content > .caption {
+      text-align: center;
+    }
+
+    .contactForm {
+      margin-top: 4.8rem;
+    }
+
+    .moreContent {
+      width: 100%;
+    }
+
+    .blueCircle {
+      width: 3.6rem;
+      height: 3.6rem;
+    }
+  }
 `;
 
 const MainContent = () => {
   return (
     <Wrapper>
       <div className="content">
-        <h1 className="displayMediumBold">
+        <h1 className="displayMediumBold caption">
           A 30-MINUTES{" "}
           <span className="textPrimary">
             FREE COMPREHENSIVE STRATEGY SESSION

@@ -1,6 +1,22 @@
 import styled from "styled-components";
 import Spacer from "./Spacer";
 
+const Wrapper = styled.div`
+  .mb {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    .mb {
+      display: block;
+    }
+
+    .lg {
+      display: none;
+    }
+  }
+`;
+
 const List = styled.div`
   width: 80%;
   margin: auto;
@@ -11,15 +27,31 @@ const List = styled.div`
   p {
     white-space: nowrap;
   }
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+
+    p {
+      text-align: center;
+    }
+  }
 `;
 
 const ClientList = () => {
   return (
-    <>
-      <h1 className="displayMediumBold textCenter">
+    <Wrapper>
+      <h1 className="displayMediumBold textCenter lg">
         OTHER BRANDS AND CLIENTS
         <br />
-        I’VE WORKED WITH{" "}
+        I’VE WORKED WITH
+      </h1>
+      <h1 className="displayMediumBold textCenter mb">
+        OTHER BRANDS
+        <br />
+        AND CLIENTS
+        <br />
+        I’VE WORKED WITH
       </h1>
       <Spacer y={12} />
       <List>
@@ -66,7 +98,7 @@ const ClientList = () => {
           <Spacer y={2.4} />
         </div>
       </List>
-    </>
+    </Wrapper>
   );
 };
 

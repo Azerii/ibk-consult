@@ -11,6 +11,27 @@ const Wrapper = styled.form`
   .hidden {
     display: none;
   }
+
+  .successMessage {
+    width: fit-content;
+    position: fixed;
+    top: -14.4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2.4rem;
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    background-color: #ffffff;
+    border-radius: 3rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 500ms ease-in;
+
+    &.open {
+      top: 2.4rem;
+      opacity: 1;
+    }
+  }
 `;
 
 const Services = styled.div`
@@ -96,12 +117,25 @@ const handleServiceClick = (e, checkboxName) => {
   document.querySelector(`input[name="${checkboxName}"]`).click();
 };
 
+const handleSubmit = (e) => {
+  e.preventDefault();
+  document.querySelector(".successMessage").classList.add("open");
+  setTimeout(() => {
+    document.querySelector(".successMessage").classList.remove("open");
+  }, 3000);
+};
+
 const ContactForm = ({ className }) => {
   return (
     <div className={className} id="get-started">
       <h2 className="textUppercase textLargeBold">Get Started</h2>
       <Spacer y={4.8} />
-      <Wrapper>
+      <Wrapper onSubmit={handleSubmit}>
+        <p className="textMedium textCenter successMessage">
+          Message Sent Successfully.
+          <br />
+          We will get back to you Shortly.
+        </p>
         <FormGroup
           fieldStyle="shortText"
           inputType="text"

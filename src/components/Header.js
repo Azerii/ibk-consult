@@ -6,6 +6,10 @@ import Spacer from "./Spacer";
 
 const Wrapper = styled.nav`
   padding: 2.4rem 0;
+  // position: sticky;
+  // top: 0;
+  // z-index: 10;
+  // background-color: #ffffff;
 
   .inner,
   .navRight,
@@ -20,6 +24,21 @@ const Wrapper = styled.nav`
 
   .navLink img {
     height: 2.4rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .inner,
+    .navRight {
+      flex-wrap: wrap;
+    }
+
+    .navRight {
+      margin-top: 2.4rem;
+    }
+
+    .navLink {
+      margin-top: 1.2rem;
+    }
   }
 `;
 

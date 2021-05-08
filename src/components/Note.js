@@ -9,17 +9,37 @@ const Wrapper = styled.div`
   .textPrimary {
     color: #0000fe;
   }
+
+  .mb {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0 2.4rem;
+    .mb {
+      display: block;
+    }
+
+    .lg {
+      display: none;
+    }
+  }
 `;
 
 const Note = () => {
   return (
     <Wrapper>
-      <p className="textPrimary textLargeBold textCenter">
+      <p className="textPrimary textLargeBold textCenter lg">
         There is a very limited number of slots available for this
         <br />
         free consultation and it won’t stay free for long, so ensure
         <br />
         to utilize this opportunity now.
+      </p>
+      <p className="textPrimary textLargeBold textCenter mb">
+        There is a very limited number of slots available for this free
+        consultation and it won’t stay free for long, so ensure to utilize this
+        opportunity now.
       </p>
       <Spacer y={4.8} />
       <a

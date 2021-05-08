@@ -12,6 +12,22 @@ const Wrapper = styled.div`
   .textPrimary {
     color: #0000fe;
   }
+
+  .mb {
+    display: none;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0 2.4rem;
+
+    .lg {
+      display: none;
+    }
+
+    .mb {
+      display: block;
+    }
+  }
 `;
 
 const Brands = styled.div`
@@ -20,6 +36,11 @@ const Brands = styled.div`
   grid-gap: 7.2rem;
   grid-template-columns: repeat(6, 1fr);
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 const Brand = styled.div`
@@ -35,7 +56,7 @@ const Experience = () => {
       <Spacer y={9.6} />
       <h1 className="displayMediumBold">Work Experience</h1>
       <Spacer y={2.4} />
-      <p className="textMedium textCenter">
+      <p className="textMedium textCenter lg">
         My track record as an experienced Digital Marketing Manager has seen me
         help businesses to
         <br />
@@ -46,6 +67,15 @@ const Experience = () => {
         exactly where your
         <br />
         previous strategies have fallen short and where to pick up from.{" "}
+      </p>
+      <p className="textMedium textCenter mb">
+        My track record as an experienced
+        <br />
+        Digital Marketing Manager has seen me help businesses to leverage the
+        strengths & weak-points of their market competitors into generating
+        awareness for their brand and services. I can help you do the same by
+        showing you exactly where your previous strategies have fallen short and
+        where to pick up from.{" "}
       </p>
       <Spacer y={7.2} />
       <Button text="Get free expert advice" as="a" href="/#get-started" />

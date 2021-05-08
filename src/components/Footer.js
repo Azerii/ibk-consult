@@ -30,6 +30,16 @@ const Wrapper = styled.footer`
     line-height: 21px;
     letter-spacing: 0px;
   }
+
+  @media screen and (max-width: 768px) {
+    .inner {
+      flex-wrap: wrap;
+    }
+
+    .socials {
+      margin-top: 2.4rem;
+    }
+  }
 `;
 
 const Footer = () => {
