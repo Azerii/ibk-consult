@@ -14,6 +14,10 @@ const Wrapper = styled.div`
     .lg {
       display: none;
     }
+
+    ul {
+      list-style: initial;
+    }
   }
 `;
 
@@ -25,16 +29,19 @@ const List = styled.div`
   grid-gap: 3.6rem;
 
   p {
+    width: 100%;
     white-space: nowrap;
+    // text-align: center;
+  }
+
+  &.mb {
+    display: none;
   }
 
   @media screen and (max-width: 768px) {
     display: flex;
     flex-wrap: wrap;
-
-    p {
-      text-align: center;
-    }
+    grid-gap: unset;
   }
 `;
 
@@ -53,50 +60,50 @@ const ClientList = () => {
         <br />
         I’VE WORKED WITH
       </h1>
-      <Spacer y={12} />
+      <Spacer y={6} />
       <List>
-        <div>
-          <p className="textLargeBold">MedicalSearch AU, Australia</p>
+        <ul className="fullWidth">
+          <li className="textMediumBold">MedicalSearch AU, Australia</li>
           <Spacer y={2.4} />
-          <p className="textLargeBold">Johnson A. Furnitures, Nigeria</p>
+          <li className="textMediumBold">Johnson A. Furnitures, Nigeria</li>
           <Spacer y={2.4} />
-          <p className="textLargeBold">Professional Seduction, USA</p>
+          <li className="textMediumBold">Professional Seduction, USA</li>
           <Spacer y={2.4} />
-          <p className="textLargeBold">IndustrySearch AU, Australia</p>
+          <li className="textMediumBold">IndustrySearch AU, Australia</li>
           <Spacer y={2.4} />
-          <p className="textLargeBold">TS Elimination, Nevada, USA</p>
+          <li className="textMediumBold">TS Elimination, Nevada, USA</li>
           <Spacer y={2.4} />
-          <p className="textLargeBold">Gallant Gardens, Singapore</p>
+          <li className="textMediumBold">Gallant Gardens, Singapore</li>
           <Spacer y={2.4} />
-        </div>
-        <div>
-          <p className="textLargeBold">MedicalSearch AU, Australia</p>
+        </ul>
+        <ul className="fullWidth">
+          <li className="textMediumBold">MedicalSearch AU, Australia</li>
           <Spacer y={2.4} />
-          <p className="textLargeBold">Johnson A. Furnitures, Nigeria</p>
+          <li className="textMediumBold">Johnson A. Furnitures, Nigeria</li>
           <Spacer y={2.4} />
-          <p className="textLargeBold">Professional Seduction, USA</p>
+          <li className="textMediumBold">Professional Seduction, USA</li>
           <Spacer y={2.4} />
-          <p className="textLargeBold">IndustrySearch AU, Australia</p>
+          <li className="textMediumBold">IndustrySearch AU, Australia</li>
           <Spacer y={2.4} />
-          <p className="textLargeBold">TS Elimination, Nevada, USA</p>
+          <li className="textMediumBold">TS Elimination, Nevada, USA</li>
           <Spacer y={2.4} />
-          <p className="textLargeBold">Gallant Gardens, Singapore</p>
+          <li className="textMediumBold">Gallant Gardens, Singapore</li>
           <Spacer y={2.4} />
-        </div>
-        <div>
-          <p className="textLargeBold">MedicalSearch AU, Australia</p>
+        </ul>
+        <ul className="fullWidth">
+          <li className="textMediumBold">MedicalSearch AU, Australia</li>
           <Spacer y={2.4} />
-          <p className="textLargeBold">Johnson A. Furnitures, Nigeria</p>
+          <li className="textMediumBold">Johnson A. Furnitures, Nigeria</li>
           <Spacer y={2.4} />
-          <p className="textLargeBold">Professional Seduction, USA</p>
+          <li className="textMediumBold">Professional Seduction, USA</li>
           <Spacer y={2.4} />
-          <p className="textLargeBold">IndustrySearch AU, Australia</p>
+          <li className="textMediumBold">IndustrySearch AU, Australia</li>
           <Spacer y={2.4} />
-          <p className="textLargeBold">TS Elimination, Nevada, USA</p>
+          <li className="textMediumBold">TS Elimination, Nevada, USA</li>
           <Spacer y={2.4} />
-          <p className="textLargeBold">Gallant Gardens, Singapore</p>
+          <li className="textMediumBold">Gallant Gardens, Singapore</li>
           <Spacer y={2.4} />
-        </div>
+        </ul>
       </List>
     </Wrapper>
   );

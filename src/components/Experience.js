@@ -40,6 +40,7 @@ const Brands = styled.div`
   @media screen and (max-width: 768px) {
     display: flex;
     flex-wrap: wrap;
+    grid-gap: unset;
   }
 `;
 
@@ -48,6 +49,10 @@ const Brand = styled.div`
   flex-direction: column;
   align-items: center;
   grid-column: ${(props) => props.gridColumn || "unset"};
+
+  @media screen and (max-width: 768px) {
+    margin: 3.6rem 0;
+  }
 `;
 
 const Experience = () => {

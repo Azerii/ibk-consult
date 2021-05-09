@@ -26,18 +26,17 @@ const Wrapper = styled.nav`
     height: 2.4rem;
   }
 
+  .mb {
+    display: none;
+  }
+
   @media screen and (max-width: 768px) {
-    .inner,
-    .navRight {
-      flex-wrap: wrap;
+    .mb {
+      display: block;
     }
 
-    .navRight {
-      margin-top: 2.4rem;
-    }
-
-    .navLink {
-      margin-top: 1.2rem;
+    .lg {
+      display: none;
     }
   }
 `;
@@ -50,8 +49,8 @@ const Header = () => {
         <div className="navRight">
           <a href="mailto:ibukunadegbulugbe@gmail.com" className="navLink">
             <img src={mailIcon} alt="mail" />
-            <Spacer x={1.2} />
-            <span className="textMedium">ibukunadegbulugbe@gmail.com</span>
+            <Spacer className="lg" x={1.2} />
+            <span className="textMedium lg">ibukunadegbulugbe@gmail.com</span>
           </a>
           <Spacer x={2.4} />
           {/* get linkedin link */}
@@ -62,8 +61,8 @@ const Header = () => {
             className="navLink"
           >
             <img src={linkedin} alt="mail" />
-            <Spacer x={1.2} />
-            <span className="textMedium">Ibukun Adegbulugbe</span>
+            <Spacer className="lg" x={1.2} />
+            <span className="textMedium lg">Ibukun Adegbulugbe</span>
           </a>
         </div>
       </Container>

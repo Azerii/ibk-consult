@@ -50,19 +50,35 @@ const Footer = () => {
           © 2021 - Digifigs Limited | All Rights Reserved
         </p>
         <div className="socials">
-          <a href="/">
+          <a
+            href="https://m.facebook.com/digifigs/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <img src={facebook} alt="facebook" />
           </a>
           <Spacer x={2.4} />
-          <a href="/">
+          <a
+            href="https://twitter.com/DigifigsInc"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <img src={twitter} alt="twitter" />
           </a>
           <Spacer x={2.4} />
-          <a href="/">
+          <a
+            href="https://www.instagram.com/digifigs/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <img src={instagram} alt="instagram" />
           </a>
           <Spacer x={2.4} />
-          <a href="/">
+          <a
+            href="https://ng.linkedin.com/in/ibukunadegbulugbe"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <img src={linkedinFooter} alt="linkedin" />
           </a>
         </div>

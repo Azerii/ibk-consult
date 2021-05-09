@@ -18,7 +18,7 @@ function App() {
         <Experience />
         <Spacer y={3.6} />
         <ClientList />
-        <Spacer y={24} />
+        <Spacer y={14.4} />
         <Note />
         <Spacer y={14.4} />
         <Footer />

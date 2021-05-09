@@ -94,6 +94,10 @@ ul {
   flex-direction: row;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .noDisplay {
   display: none;
 }

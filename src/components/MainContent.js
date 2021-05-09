@@ -62,6 +62,10 @@ const Wrapper = styled(Container)`
       margin-top: 4.8rem;
     }
 
+    .memojiRow {
+      justify-content: center;
+    }
+
     .moreContent {
       width: 100%;
     }
@@ -85,7 +89,7 @@ const MainContent = () => {
           TO HELP RESHAPE YOUR BUSINESS GOALS.{" "}
         </h1>
         <Spacer y={4.8} />
-        <div className="flex-row">
+        <div className="flex-row memojiRow">
           <img src={memoji_ibk} alt="memoji" />
           <Spacer x={2.4} />
           <span className="textLargeBold">With Ibukun Adegbulugbe</span>

@@ -45,6 +45,11 @@ const Services = styled.div`
     justify-content: space-between;
     padding: 0;
     cursor: pointer;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0px;
 
     .icon {
       height: 0.6rem;
