@@ -137,9 +137,9 @@ const ContactForm = ({ className }) => {
       <Spacer y={4.8} />
       <Wrapper onSubmit={handleSubmit}>
         <p className="textMedium textCenter successMessage">
-          Message Sent Successfully.
+          Thank you for reaching out!
           <br />
-          We will get back to you Shortly.
+          I'll get back to you shortly.
         </p>
         <FormGroup
           fieldStyle="shortText"
