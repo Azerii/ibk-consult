@@ -67,11 +67,13 @@ const Services = styled.div`
     grid-row-gap: 1.2rem;
     height: 0px;
     opacity: 0;
+    pointer-events: none;
     transition: all 200ms ease-in;
 
     &.show {
       height: fit-content;
       opacity: 1;
+      pointer-events: all;
     }
   }
 
