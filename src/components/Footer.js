@@ -75,7 +75,7 @@ const Footer = () => {
           </a>
           <Spacer x={2.4} />
           <a
-            href="https://ng.linkedin.com/in/ibukunadegbulugbe"
+            href="https://www.linkedin.com/company/digifigs"
             target="_blank"
             rel="noreferrer noopener"
           >
