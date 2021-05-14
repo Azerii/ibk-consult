@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { chevronDown } from "../assets";
@@ -10,6 +11,7 @@ const Wrapper = styled.form`
 
   .hidden {
     display: none;
+    pointer-events: none;
   }
 
   .successMessage {
@@ -34,7 +36,7 @@ const Wrapper = styled.form`
   }
 `;
 
-const Services = styled.div`
+const Dropdown = styled.div`
   padding: 1.8rem 2.4rem;
   background-color: #fafafa;
   border-radius: 1.2rem;
@@ -77,7 +79,7 @@ const Services = styled.div`
     }
   }
 
-  .service {
+  .listItem {
     border: 1px solid;
     padding: 1rem 3rem;
     border-radius: 5rem;
@@ -102,83 +104,129 @@ const services = [
   "Web Development",
 ];
 
-const checkboxNames = [
-  "Sales_Funnel_Marketing",
-  "Social_Media_Marketing",
-  "Search_Engine_Optimisation",
-  "Google_Search_Ads",
-  "Wordpress_Development",
-  "UX/UI_Design",
-  "Web_Development",
+const budgetItems = [
+  "$500 - $999",
+  "$1,000 - $4,999",
+  "$5,000 - $50,000",
+  "Above $50,000",
 ];
 
-const handleListToggle = (e) => {
+const checkboxNames_services = [
+  "_Sales_Funnel_Marketing",
+  "_Social_Media_Marketing",
+  "_Search_Engine_Optimisation",
+  "_Google_Search_Ads",
+  "_Wordpress_Development",
+  "_UX_UI_Design",
+  "_Web_Development",
+];
+
+const checkboxNames_budgetItems = [
+  "_500_to_999_dollars",
+  "_1000_to_4999_dollars",
+  "_5000_to_50000_dollars",
+  "_above_500000_dollars",
+];
+
+const handleListToggle = (e, listName) => {
   e.target.childNodes[1] && e.target.childNodes[1].classList.toggle("rotate");
-  document.querySelector(".serviceList").classList.toggle("show");
+  document.querySelector(`.${listName}`).classList.toggle("show");
 
   return null;
 };
 
-const handleServiceClick = (e, checkboxName) => {
-  e.target.classList.toggle("active");
-  document.querySelector(`input[name="${checkboxName}"]`).click();
-};
+const handleServiceClick = (e, id, budget) => {
+  if (budget) {
+    document.querySelectorAll(`.budgetList .listItem`).forEach((item) => {
+      item.classList.remove("active");
+    });
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  document.querySelector(".successMessage").classList.add("open");
-  setTimeout(() => {
-    document.querySelector(".successMessage").classList.remove("open");
-  }, 3000);
+    e.target.classList.toggle("active");
+    document.querySelector(`input#${id}`).click();
+  } else {
+    e.target.classList.toggle("active");
+    document.querySelector(`input#${id}`).click();
+  }
 };
 
 const ContactForm = ({ className }) => {
+  const [hideLabel, setHideLabel] = useState(false);
+
+  const handleReset = () => {
+    document.querySelector("#form").reset();
+    document.querySelectorAll(`.listItem`).forEach((item) => {
+      item.classList.remove("active");
+    });
+    setHideLabel(true);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleReset();
+    document.querySelector(".successMessage").classList.add("open");
+    setTimeout(() => {
+      document.querySelector(".successMessage").classList.remove("open");
+    }, 3000);
+  };
+
   return (
     <div className={className} id="get-started">
       <h2 className="textUppercase textLargeBold">Get Started</h2>
       <Spacer y={4.8} />
-      <Wrapper onSubmit={handleSubmit}>
+      <Wrapper id="form" onSubmit={handleSubmit} onReset={handleReset}>
         <p className="textMedium textCenter successMessage">
           Thank you for reaching out!
           <br />
           I'll get back to you shortly.
         </p>
         <FormGroup
+          className="inputWrapper"
           fieldStyle="shortText"
           inputType="text"
           name="full_name"
           placeholder="Full name"
+          hideLabel={hideLabel}
+          setHideLabel={setHideLabel}
           required
         />
         <Spacer y={2.4} />
         <FormGroup
+          className="inputWrapper"
           fieldStyle="shortText"
           inputType="email"
           name="email_address"
           placeholder="Email address"
+          hideLabel={hideLabel}
+          setHideLabel={setHideLabel}
           required
         />
         <Spacer y={2.4} />
         <FormGroup
+          className="inputWrapper"
           fieldStyle="shortText"
           inputType="number"
           name="phone_number"
           placeholder="Phone number"
+          hideLabel={hideLabel}
+          setHideLabel={setHideLabel}
           required
         />
         <Spacer y={2.4} />
         <FormGroup
+          className="inputWrapper"
           fieldStyle="shortText"
           inputType="text"
           name="company_name"
           placeholder="Company name"
+          hideLabel={hideLabel}
+          setHideLabel={setHideLabel}
           required
         />
         <Spacer y={2.4} />
-        <Services>
+        <Dropdown>
           <button
             type="button"
-            onClick={handleListToggle}
+            onClick={(e) => handleListToggle(e, "serviceList")}
             className="toggler fullWidth"
           >
             <span className="noPointerEvents">
@@ -195,31 +243,77 @@ const ContactForm = ({ className }) => {
             {services.map((item, index) => (
               <button
                 key={`service_${item}`}
-                className="textSmall black top center service"
-                onClick={(e) => handleServiceClick(e, checkboxNames[index])}
+                className="textSmall black top center listItem"
+                onClick={(e) =>
+                  handleServiceClick(e, checkboxNames_services[index])
+                }
                 type="button"
               >
                 {item}
               </button>
             ))}
           </div>
-        </Services>
+        </Dropdown>
         <Spacer y={2.4} />
-        <FormGroup
-          fieldStyle="shortText"
-          inputType="text"
-          name="budget"
-          placeholder="What's your budget like"
-          required
-        />
+        <Dropdown>
+          <button
+            type="button"
+            onClick={(e) => handleListToggle(e, "budgetList")}
+            className="toggler fullWidth"
+          >
+            <span className="noPointerEvents">What's your budget like</span>
+            <img
+              src={chevronDown}
+              alt="chevron down"
+              className="noPointerEvents icon"
+            />
+          </button>
+          <div className="list budgetList">
+            <Spacer y={2.4} />
+            {budgetItems.map((item, index) => (
+              <button
+                key={`service_${item}`}
+                className="textSmall black top center listItem"
+                onClick={(e) =>
+                  handleServiceClick(e, checkboxNames_budgetItems[index], true)
+                }
+                type="button"
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+        </Dropdown>
         {services.map((service, index) => (
           <input
             key={`checkbox_${service}`}
+            id={checkboxNames_services[index]}
             type="checkbox"
-            name={checkboxNames[index]}
+            name={checkboxNames_services[index]}
             className="serviceCheckbox hidden"
+            value={service}
           />
         ))}
+        {budgetItems.map((item, index) => (
+          <input
+            key={`radio_${item}`}
+            id={checkboxNames_budgetItems[index]}
+            type="checkbox"
+            name={checkboxNames_budgetItems[index]}
+            className="hidden"
+            value={item}
+          />
+        ))}
+        <Spacer y={2.4} />
+        <FormGroup
+          fieldStyle="longText"
+          inputType="text"
+          name="about"
+          placeholder="Tell me a bit about your business"
+          hideLabel={hideLabel}
+          setHideLabel={setHideLabel}
+          required
+        />
         <Spacer y={4.8} />
         <Button text="REQUEST CONSULTATION" fullWidth />
       </Wrapper>

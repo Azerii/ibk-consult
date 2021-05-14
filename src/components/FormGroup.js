@@ -9,8 +9,10 @@ const Wrapper = styled.div`
   justify-content: center;
   background-color: #fafafa;
   border-radius: 1.2rem;
-  padding: 0 2.4rem;
-  height: 5.6rem;
+  height: ${(props) =>
+    props.fieldStyle === "longText" ? "fit-content" : "5.6rem"};
+  padding: ${(props) =>
+    props.fieldStyle === "longText" ? "1.8rem 2.4rem" : "0 2.4rem"};
   position: relative;
 
   input,
@@ -99,12 +101,15 @@ const FormGroup = ({
   required = true,
   options = [],
   defaultValue,
+  hideLabel,
+  setHideLabel,
 }) => {
   const [showLabel, setShowLabel] = useState(false);
 
   const toggleLabel = (e) => {
     if (e.target.value.length > 0) {
       setShowLabel(true);
+      setHideLabel(false);
     } else {
       setShowLabel(false);
     }
@@ -113,8 +118,10 @@ const FormGroup = ({
   useEffect(() => {
     if (defaultValue) {
       setShowLabel(true);
+    } else {
+      setShowLabel(false);
     }
-  }, [defaultValue]);
+  }, [defaultValue, hideLabel]);
 
   return (
     <Wrapper className={className} fieldStyle={fieldStyle}>
@@ -131,7 +138,9 @@ const FormGroup = ({
             required={required || false}
             defaultValue={defaultValue}
           />
-          {showLabel && <label htmlFor={name}>{placeholder}</label>}
+          {showLabel && !hideLabel && (
+            <label htmlFor={name}>{placeholder}</label>
+          )}
           {inputType === "password" && (
             <span
               className="toggleShowText"
@@ -152,7 +161,9 @@ const FormGroup = ({
             required={required || false}
             defaultValue={defaultValue}
           />
-          {showLabel && <label htmlFor={name}>{placeholder}</label>}
+          {showLabel && !hideLabel && (
+            <label htmlFor={name}>{placeholder}</label>
+          )}
         </>
       )}
 
@@ -178,7 +189,9 @@ const FormGroup = ({
               </option>
             ))}
           </select>
-          {showLabel && <label htmlFor={name}>{placeholder}</label>}
+          {showLabel && !hideLabel && (
+            <label htmlFor={name}>{placeholder}</label>
+          )}
           <img src={chevronDown} alt="dropdown" className="dropdownIcon" />
         </>
       )}
@@ -194,6 +207,8 @@ FormGroup.propTypes = {
   placeholder: PropTypes.string.isRequired,
   required: PropTypes.bool,
   options: PropTypes.array,
+  hideLabel: PropTypes.bool.isRequired,
+  setHideLabel: PropTypes.func.isRequired,
 };
 
 export default FormGroup;

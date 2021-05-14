@@ -49,8 +49,8 @@ const Header = () => {
         <div className="navRight">
           <a href="mailto:ibukunadegbulugbe@gmail.com" className="navLink">
             <img src={mailIcon} alt="mail" />
-            <Spacer className="lg" x={1.2} />
-            <span className="textMedium lg">ibukunadegbulugbe@gmail.com</span>
+            {/* <Spacer className="lg" x={1.2} />
+            <span className="textMedium lg">ibukunadegbulugbe@gmail.com</span> */}
           </a>
           <Spacer x={2.4} />
           {/* get linkedin link */}
@@ -61,8 +61,8 @@ const Header = () => {
             className="navLink"
           >
             <img src={linkedin} alt="mail" />
-            <Spacer className="lg" x={1.2} />
-            <span className="textMedium lg">Ibukun Adegbulugbe</span>
+            {/* <Spacer className="lg" x={1.2} />
+            <span className="textMedium lg">Ibukun Adegbulugbe</span> */}
           </a>
         </div>
       </Container>
