@@ -166,7 +166,7 @@ const ContactForm = ({ className }) => {
 
   return (
     <div className={className} id="register">
-      <h2 className="textUppercase textLargeBold">Get Started</h2>
+      <h2 className="textUppercase textLargeBold">Register</h2>
       <Spacer y={4.8} />
       <Wrapper id="form" onSubmit={handleSubmit} onReset={handleReset}>
         <FormGroup
