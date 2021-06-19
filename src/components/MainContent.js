@@ -33,8 +33,8 @@ const Wrapper = styled(Container)`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 4.8rem;
-    width: 4.8rem;
+    height: 3.8rem;
+    width: 3.8rem;
     flex-shrink: 0;
     border-radius: 50%;
     background-color: #0000fe;
@@ -55,7 +55,8 @@ const Wrapper = styled(Container)`
     }
 
     .content > .caption {
-      text-align: center;
+      // text-align: center;
+      line-height: 56px;
     }
 
     .contactForm {
@@ -82,11 +83,8 @@ const MainContent = () => {
     <Wrapper>
       <div className="content">
         <h1 className="displayMediumBold caption">
-          A 30-MINUTES{" "}
-          <span className="textPrimary">
-            FREE COMPREHENSIVE STRATEGY SESSION
-          </span>{" "}
-          TO HELP RESHAPE YOUR BUSINESS GOALS.{" "}
+          A <span className="textPrimary">FREE WEBINAR</span> ON HOW TO CREATE
+          AN EFFECTIVE DIGITAL MARKETING PLAN FOR YOUR BUSINESS
         </h1>
         <Spacer y={4.8} />
         <div className="flex-row memojiRow">
@@ -97,62 +95,53 @@ const MainContent = () => {
         <Spacer y={4.8} />
         <div className="moreContent">
           <p className="textMedium">
-            Book a <span className="textPrimary textMediumBold">TOTALLY</span>{" "}
-            free 30-minute strategy consultation with me where we discuss
-            bespoke business solutions and I help resteer your business goals to
-            exactly where you want it to be.
-          </p>
-          <Spacer y={2.4} />
-          <p className="textMedium">
-            We will cover how to approach your particular business challenge,
-            answer any questions you have and map out a streamlined,
-            results-driven plan you can immediately execute.{" "}
-          </p>
-          <Spacer y={2.4} />
-          <p className="textMedium">
-            There are very limited slots so the pick will be based on those who
-            show genuine interest in wanting to grow their business.{" "}
+            Date: Wednesday, June 23rd, 2021
+            <br />
+            Time: 12:00pm - 1:00pm
           </p>
           <Spacer y={6} />
-          <h2 className="textLargeBold">
-            Here’s what you can expect on submitting the information contained
-            in the form:{" "}
-          </h2>
+          <h2 className="textLargeBold">We’ll discuss the following:</h2>
           <Spacer y={4.8} />
           <div className="flex-row textMedium">
             <span className="blueCircle">1</span>
             <Spacer x={2.4} />
-            <span>
-              We review the responses and on selection, you get an email to
-              confirm your request and availability.
-            </span>
+            <span>Must-haves for a digital marketing plan.</span>
           </div>
           <Spacer y={2.4} />
           <div className="flex-row textMedium">
             <span className="blueCircle">2</span>
             <Spacer x={2.4} />
-            <span>
-              On confirming your availability, you’ll get another email
-              containing a Calendly invite with meeting details.
-            </span>
+            <span>Doing a quick SWOT Analysis.</span>
           </div>
           <Spacer y={2.4} />
           <div className="flex-row textMedium">
             <span className="blueCircle">3</span>
             <Spacer x={2.4} />
-            <span>
-              We assess where you are with your business, provide general
-              recommendations and a bespoke, mapped-out business strategy.
-            </span>
+            <span>Deciding on the SMART goals for your marketing.</span>
           </div>
           <Spacer y={2.4} />
           <div className="flex-row textMedium">
             <span className="blueCircle">4</span>
             <Spacer x={2.4} />
-            <span>
-              We’ll proffer options to help you execute this plan towards
-              reaching your goals.
-            </span>
+            <span>Creating a target persona.</span>
+          </div>
+          <Spacer y={2.4} />
+          <div className="flex-row textMedium">
+            <span className="blueCircle">5</span>
+            <Spacer x={2.4} />
+            <span>Defining your marketing strategy</span>
+          </div>
+          <Spacer y={2.4} />
+          <div className="flex-row textMedium">
+            <span className="blueCircle">6</span>
+            <Spacer x={2.4} />
+            <span>Timelines &amp; Budgets</span>
+          </div>
+          <Spacer y={2.4} />
+          <div className="flex-row textMedium">
+            <span className="blueCircle">7</span>
+            <Spacer x={2.4} />
+            <span>Important KPIs to track.</span>
           </div>
         </div>
       </div>

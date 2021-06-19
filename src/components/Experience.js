@@ -83,7 +83,7 @@ const Experience = () => {
         where to pick up from.{" "}
       </p>
       <Spacer y={7.2} />
-      <Button text="Get free expert advice" as="a" href="/#get-started" />
+      <Button text="Register now" as="a" href="/#register" />
       <Spacer y={14.4} />
       <h1 className="displayMediumBold textCenter">
         Why should you trust
@@ -144,11 +144,8 @@ const Experience = () => {
         </Brand>
       </Brands>
       <Spacer y={9.6} />
-      <a
-        href="/#get-started"
-        className="textLargeBold textPrimary textUnderline"
-      >
-        Schedule free consultation
+      <a href="/#register" className="textLargeBold textPrimary textUnderline">
+        Register now
       </a>
       <Spacer y={9.6} />
     </Wrapper>

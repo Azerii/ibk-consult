@@ -9,10 +9,8 @@ const Wrapper = styled.div`
   justify-content: center;
   background-color: #fafafa;
   border-radius: 1.2rem;
-  height: ${(props) =>
-    props.fieldStyle === "longText" ? "fit-content" : "5.6rem"};
-  padding: ${(props) =>
-    props.fieldStyle === "longText" ? "1.8rem 2.4rem" : "0 2.4rem"};
+  height: ${(props) => (props.fieldStyle === "longText" ? "18rem" : "5.6rem")};
+  padding: 0 2.4rem;
   position: relative;
 
   input,
@@ -98,7 +96,7 @@ const FormGroup = ({
   inputType,
   name,
   placeholder,
-  required = true,
+  required = false,
   options = [],
   defaultValue,
   hideLabel,
@@ -135,7 +133,7 @@ const FormGroup = ({
             placeholder={placeholder}
             onBlur={toggleLabel}
             onChange={toggleLabel}
-            required={required || false}
+            required={required}
             defaultValue={defaultValue}
           />
           {showLabel && !hideLabel && (
@@ -158,7 +156,9 @@ const FormGroup = ({
             id={name}
             name={name}
             placeholder={placeholder}
-            required={required || false}
+            onBlur={toggleLabel}
+            onChange={toggleLabel}
+            required={required}
             defaultValue={defaultValue}
           />
           {showLabel && !hideLabel && (
@@ -177,7 +177,7 @@ const FormGroup = ({
             placeholder={placeholder}
             onBlur={toggleLabel}
             onChange={toggleLabel}
-            required={required || false}
+            required={required}
             defaultValue={defaultValue}
           >
             <option value="" disabled selected hidden>

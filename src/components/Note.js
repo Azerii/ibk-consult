@@ -32,21 +32,18 @@ const Note = () => {
       <p className="textPrimary textLargeBold textCenter lg">
         There is a very limited number of slots available for this
         <br />
-        free consultation and it won’t stay free for long, so ensure
-        <br />
-        to utilize this opportunity now.
+        free webinar, so ensure to utilize this opportunity now.
       </p>
       <p className="textPrimary textLargeBold textCenter mb">
-        There is a very limited number of slots available for this free
-        consultation and it won’t stay free for long, so ensure to utilize this
-        opportunity now.
+        There is a very limited number of slots available for this free webinar,
+        so ensure to utilize this opportunity now.
       </p>
       <Spacer y={4.8} />
       <a
-        href="/#get-started"
+        href="/#register"
         className="textLargeBold textPrimary textUnderline textCenter"
       >
-        Claim free consultation now
+        Register now
       </a>
     </Wrapper>
   );
